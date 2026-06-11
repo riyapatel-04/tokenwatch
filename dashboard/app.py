@@ -113,8 +113,9 @@ with col2:
 st.divider()
 st.subheader("💡 Recommendations")
 
-low_roi_teams = team_df[team_df["ROI_SCORE"] < 5]["TEAM"].unique()
+low_roi_teams = team_df[team_df["ROI_SCORE"] < 4]["TEAM"].unique()
 for team in low_roi_teams:
     st.warning(f"⚠️ {team} has low ROI — consider switching to a cheaper model like Claude Haiku")
 
-st.success("✅ Data Engineering team has highest ROI — good AI usage patterns detected")
+best_team = team_df.groupby("TEAM")["ROI_SCORE"].mean().idxmax()
+st.success(f"✅ {best_team} team has highest ROI — good AI usage patterns detected")
