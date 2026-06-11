@@ -52,7 +52,8 @@ total_spend = daily_df["TOTAL_COST_USD"].sum()
 total_tokens = daily_df["TOTAL_TOKENS"].sum()
 avg_roi = team_df["ROI_SCORE"].mean()
 budget = 20000
-runway_days = int(((budget - total_spend) / (total_spend / 90)))
+daily_burn = total_spend / 90
+runway_days = int((budget - total_spend) / daily_burn)
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total Spend", f"${total_spend:,.2f}", "+34% vs last month")
@@ -86,7 +87,11 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("ROI by Team")
     latest_week = team_df["EVENT_WEEK"].max()
-    latest_team = team_df[team_df["EVENT_WEEK"] == latest_week][["TEAM", "TOTAL_COST_USD", "ROI_SCORE"]]
+    latest_team = team_df[team_df["EVENT_WEEK"] == latest_week][["TEAM", "TOTAL_COST_USD", "ROI_SCORE"]].copy()
+    latest_team = latest_team.assign(
+    ROI_SCORE=latest_team["ROI_SCORE"].round(1),
+    TOTAL_COST_USD=latest_team["TOTAL_COST_USD"].round(2)
+)
     latest_team = latest_team.sort_values("ROI_SCORE", ascending=False)
 
     def color_roi(val):
