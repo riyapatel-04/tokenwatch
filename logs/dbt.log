@@ -160,3 +160,507 @@ WHERE was_successful = TRUE
 [0m15:36:17.253734 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251597447A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002515CEC6D20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002515CEC7C20>]}
 [0m15:36:17.253734 [debug] [MainThread]: Flushing usage events
 [0m15:36:17.625951 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:39:59.498960 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CBF6E9A60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CBF08A750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CBF08AAE0>]}
+
+
+============================== 15:39:59.498960 | 814c0f21-61d0-4338-8a5d-b2a08da3a917 ==============================
+[0m15:39:59.498960 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:39:59.498960 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\RIYA\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\RIYA\\Documents\\tokenwatch\\logs'}
+[0m15:40:00.002235 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m15:40:00.002235 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m15:40:00.003234 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m15:40:00.173386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CC0F8F980>]}
+[0m15:40:00.232488 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CD1BBC830>]}
+[0m15:40:00.233722 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m15:40:00.520909 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m15:40:00.682610 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 3 files added, 0 files changed.
+[0m15:40:00.682610 [debug] [MainThread]: Partial parsing: added file: tokenwatch://models\marts\mart_provider_breakdown.sql
+[0m15:40:00.682610 [debug] [MainThread]: Partial parsing: added file: tokenwatch://models\marts\mart_team_roi.sql
+[0m15:40:00.683804 [debug] [MainThread]: Partial parsing: added file: tokenwatch://models\marts\mart_daily_cost.sql
+[0m15:40:00.897105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CD2C4CC50>]}
+[0m15:40:00.964186 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\RIYA\Documents\tokenwatch\target\manifest.json
+[0m15:40:00.966939 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\RIYA\Documents\tokenwatch\target\semantic_manifest.json
+[0m15:40:00.974815 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CD2CC5E20>]}
+[0m15:40:00.974815 [info ] [MainThread]: Found 6 models, 4 data tests, 1 source, 536 macros
+[0m15:40:00.975767 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CD2C98CB0>]}
+[0m15:40:00.976858 [info ] [MainThread]: 
+[0m15:40:00.976858 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:40:00.977767 [info ] [MainThread]: 
+[0m15:40:00.977767 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m15:40:00.982767 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TOKENWATCH'
+[0m15:40:01.028992 [debug] [ThreadPool]: Using snowflake connection "list_TOKENWATCH"
+[0m15:40:01.028992 [debug] [ThreadPool]: On list_TOKENWATCH: show terse schemas in database TOKENWATCH
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "connection_name": "list_TOKENWATCH"} */
+[0m15:40:01.028992 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:40:02.995910 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.966 seconds
+[0m15:40:02.999773 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TOKENWATCH_RAW'
+[0m15:40:03.008921 [debug] [ThreadPool]: Using snowflake connection "list_TOKENWATCH_RAW"
+[0m15:40:03.008921 [debug] [ThreadPool]: On list_TOKENWATCH_RAW: show objects in TOKENWATCH.RAW
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "connection_name": "list_TOKENWATCH_RAW"} */;
+[0m15:40:03.008921 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:40:04.448874 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 1.440 seconds
+[0m15:40:04.455891 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CBCA550A0>]}
+[0m15:40:04.459891 [debug] [Thread-2 (]: Began running node model.tokenwatch.my_first_dbt_model
+[0m15:40:04.459891 [info ] [Thread-2 (]: 1 of 6 START sql table model RAW.my_first_dbt_model ............................ [RUN]
+[0m15:40:04.460891 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.tokenwatch.my_first_dbt_model'
+[0m15:40:04.460891 [debug] [Thread-2 (]: Began compiling node model.tokenwatch.my_first_dbt_model
+[0m15:40:04.467661 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokenwatch.my_first_dbt_model"
+[0m15:40:04.469664 [debug] [Thread-2 (]: Began executing node model.tokenwatch.my_first_dbt_model
+[0m15:40:04.511693 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokenwatch.my_first_dbt_model"
+[0m15:40:04.513690 [debug] [Thread-2 (]: Using snowflake connection "model.tokenwatch.my_first_dbt_model"
+[0m15:40:04.514694 [debug] [Thread-2 (]: On model.tokenwatch.my_first_dbt_model: create or replace transient table TOKENWATCH.RAW.my_first_dbt_model
+    
+    
+    
+    as (/*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "node_id": "model.tokenwatch.my_first_dbt_model"} */;
+[0m15:40:04.514694 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:40:06.152487 [debug] [Thread-2 (]: SQL status: SUCCESS 2 in 1.637 seconds
+[0m15:40:06.171891 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CBEFFC830>]}
+[0m15:40:06.172999 [info ] [Thread-2 (]: 1 of 6 OK created sql table model RAW.my_first_dbt_model ....................... [[32mSUCCESS 2[0m in 1.71s]
+[0m15:40:06.172999 [debug] [Thread-2 (]: Finished running node model.tokenwatch.my_first_dbt_model
+[0m15:40:06.173892 [debug] [Thread-2 (]: Began running node model.tokenwatch.stg_token_usage
+[0m15:40:06.174230 [info ] [Thread-2 (]: 2 of 6 START sql view model RAW.stg_token_usage ................................ [RUN]
+[0m15:40:06.174696 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tokenwatch.my_first_dbt_model, now model.tokenwatch.stg_token_usage)
+[0m15:40:06.174696 [debug] [Thread-2 (]: Began compiling node model.tokenwatch.stg_token_usage
+[0m15:40:06.176812 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokenwatch.stg_token_usage"
+[0m15:40:06.177819 [debug] [Thread-2 (]: Began executing node model.tokenwatch.stg_token_usage
+[0m15:40:06.196716 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokenwatch.stg_token_usage"
+[0m15:40:06.197717 [debug] [Thread-2 (]: Using snowflake connection "model.tokenwatch.stg_token_usage"
+[0m15:40:06.198885 [debug] [Thread-2 (]: On model.tokenwatch.stg_token_usage: create or replace   view TOKENWATCH.RAW.stg_token_usage
+  
+  
+  
+  
+  as (
+    WITH source AS (
+    SELECT * FROM TOKENWATCH.RAW.token_usage_raw
+)
+
+SELECT
+    event_id,
+    event_timestamp,
+    project,
+    team,
+    engineer,
+    model,
+    provider,
+    task_type,
+    input_tokens,
+    output_tokens,
+    total_tokens,
+    cost_usd,
+    duration_ms,
+    was_successful,
+    DATE_TRUNC('day', event_timestamp)  AS event_date,
+    DATE_TRUNC('week', event_timestamp) AS event_week
+FROM source
+WHERE was_successful = TRUE
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "node_id": "model.tokenwatch.stg_token_usage"} */;
+[0m15:40:06.571907 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.373 seconds
+[0m15:40:06.576922 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CD417EFF0>]}
+[0m15:40:06.576922 [info ] [Thread-2 (]: 2 of 6 OK created sql view model RAW.stg_token_usage ........................... [[32mSUCCESS 1[0m in 0.40s]
+[0m15:40:06.577898 [debug] [Thread-2 (]: Finished running node model.tokenwatch.stg_token_usage
+[0m15:40:06.577898 [debug] [Thread-2 (]: Began running node model.tokenwatch.my_second_dbt_model
+[0m15:40:06.578833 [info ] [Thread-2 (]: 3 of 6 START sql view model RAW.my_second_dbt_model ............................ [RUN]
+[0m15:40:06.578833 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tokenwatch.stg_token_usage, now model.tokenwatch.my_second_dbt_model)
+[0m15:40:06.578833 [debug] [Thread-2 (]: Began compiling node model.tokenwatch.my_second_dbt_model
+[0m15:40:06.581897 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokenwatch.my_second_dbt_model"
+[0m15:40:06.582249 [debug] [Thread-2 (]: Began executing node model.tokenwatch.my_second_dbt_model
+[0m15:40:06.585294 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokenwatch.my_second_dbt_model"
+[0m15:40:06.586251 [debug] [Thread-2 (]: Using snowflake connection "model.tokenwatch.my_second_dbt_model"
+[0m15:40:06.586251 [debug] [Thread-2 (]: On model.tokenwatch.my_second_dbt_model: create or replace   view TOKENWATCH.RAW.my_second_dbt_model
+  
+  
+  
+  
+  as (
+    -- Use the `ref` function to select from other models
+
+select *
+from TOKENWATCH.RAW.my_first_dbt_model
+where id = 1
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "node_id": "model.tokenwatch.my_second_dbt_model"} */;
+[0m15:40:06.812476 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.225 seconds
+[0m15:40:06.816462 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CD4329460>]}
+[0m15:40:06.816462 [info ] [Thread-2 (]: 3 of 6 OK created sql view model RAW.my_second_dbt_model ....................... [[32mSUCCESS 1[0m in 0.24s]
+[0m15:40:06.817478 [debug] [Thread-2 (]: Finished running node model.tokenwatch.my_second_dbt_model
+[0m15:40:06.817478 [debug] [Thread-2 (]: Began running node model.tokenwatch.mart_daily_cost
+[0m15:40:06.818553 [info ] [Thread-2 (]: 4 of 6 START sql view model RAW.mart_daily_cost ................................ [RUN]
+[0m15:40:06.818553 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tokenwatch.my_second_dbt_model, now model.tokenwatch.mart_daily_cost)
+[0m15:40:06.818553 [debug] [Thread-2 (]: Began compiling node model.tokenwatch.mart_daily_cost
+[0m15:40:06.821553 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokenwatch.mart_daily_cost"
+[0m15:40:06.822555 [debug] [Thread-2 (]: Began executing node model.tokenwatch.mart_daily_cost
+[0m15:40:06.824553 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokenwatch.mart_daily_cost"
+[0m15:40:06.825552 [debug] [Thread-2 (]: Using snowflake connection "model.tokenwatch.mart_daily_cost"
+[0m15:40:06.825552 [debug] [Thread-2 (]: On model.tokenwatch.mart_daily_cost: create or replace   view TOKENWATCH.RAW.mart_daily_cost
+  
+  
+  
+  
+  as (
+    WITH base AS (
+    SELECT * FROM TOKENWATCH.RAW.stg_token_usage
+)
+
+SELECT
+    event_date,
+    provider,
+    model,
+    COUNT(*)            AS total_calls,
+    SUM(total_tokens)   AS total_tokens,
+    ROUND(SUM(cost_usd), 4) AS total_cost_usd
+FROM base
+GROUP BY 1, 2, 3
+ORDER BY 1
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "node_id": "model.tokenwatch.mart_daily_cost"} */;
+[0m15:40:07.095338 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.269 seconds
+[0m15:40:07.097335 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CD42E4EF0>]}
+[0m15:40:07.098336 [info ] [Thread-2 (]: 4 of 6 OK created sql view model RAW.mart_daily_cost ........................... [[32mSUCCESS 1[0m in 0.28s]
+[0m15:40:07.098841 [debug] [Thread-2 (]: Finished running node model.tokenwatch.mart_daily_cost
+[0m15:40:07.098841 [debug] [Thread-2 (]: Began running node model.tokenwatch.mart_provider_breakdown
+[0m15:40:07.099921 [info ] [Thread-2 (]: 5 of 6 START sql view model RAW.mart_provider_breakdown ........................ [RUN]
+[0m15:40:07.099921 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tokenwatch.mart_daily_cost, now model.tokenwatch.mart_provider_breakdown)
+[0m15:40:07.099921 [debug] [Thread-2 (]: Began compiling node model.tokenwatch.mart_provider_breakdown
+[0m15:40:07.102704 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokenwatch.mart_provider_breakdown"
+[0m15:40:07.103619 [debug] [Thread-2 (]: Began executing node model.tokenwatch.mart_provider_breakdown
+[0m15:40:07.105618 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokenwatch.mart_provider_breakdown"
+[0m15:40:07.105618 [debug] [Thread-2 (]: Using snowflake connection "model.tokenwatch.mart_provider_breakdown"
+[0m15:40:07.106703 [debug] [Thread-2 (]: On model.tokenwatch.mart_provider_breakdown: create or replace   view TOKENWATCH.RAW.mart_provider_breakdown
+  
+  
+  
+  
+  as (
+    WITH base AS (
+    SELECT * FROM TOKENWATCH.RAW.stg_token_usage
+)
+
+SELECT
+    event_week,
+    provider,
+    model,
+    COUNT(*)                    AS total_calls,
+    SUM(total_tokens)           AS total_tokens,
+    ROUND(SUM(cost_usd), 4)     AS total_cost_usd,
+    ROUND(AVG(cost_usd), 6)     AS avg_cost_per_call
+FROM base
+GROUP BY 1, 2, 3
+ORDER BY 1, 3
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "node_id": "model.tokenwatch.mart_provider_breakdown"} */;
+[0m15:40:07.412649 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.306 seconds
+[0m15:40:07.416128 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CD43A4B30>]}
+[0m15:40:07.416128 [info ] [Thread-2 (]: 5 of 6 OK created sql view model RAW.mart_provider_breakdown ................... [[32mSUCCESS 1[0m in 0.32s]
+[0m15:40:07.417141 [debug] [Thread-2 (]: Finished running node model.tokenwatch.mart_provider_breakdown
+[0m15:40:07.417141 [debug] [Thread-2 (]: Began running node model.tokenwatch.mart_team_roi
+[0m15:40:07.417141 [info ] [Thread-2 (]: 6 of 6 START sql view model RAW.mart_team_roi .................................. [RUN]
+[0m15:40:07.418160 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tokenwatch.mart_provider_breakdown, now model.tokenwatch.mart_team_roi)
+[0m15:40:07.418160 [debug] [Thread-2 (]: Began compiling node model.tokenwatch.mart_team_roi
+[0m15:40:07.420128 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokenwatch.mart_team_roi"
+[0m15:40:07.422029 [debug] [Thread-2 (]: Began executing node model.tokenwatch.mart_team_roi
+[0m15:40:07.424124 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokenwatch.mart_team_roi"
+[0m15:40:07.425128 [debug] [Thread-2 (]: Using snowflake connection "model.tokenwatch.mart_team_roi"
+[0m15:40:07.426128 [debug] [Thread-2 (]: On model.tokenwatch.mart_team_roi: create or replace   view TOKENWATCH.RAW.mart_team_roi
+  
+  
+  
+  
+  as (
+    WITH base AS (
+    SELECT * FROM TOKENWATCH.RAW.stg_token_usage
+)
+
+SELECT
+    event_week,
+    team,
+    COUNT(*)                        AS total_calls,
+    SUM(total_tokens)               AS total_tokens,
+    ROUND(SUM(cost_usd), 4)         AS total_cost_usd,
+    ROUND(AVG(output_tokens * 1.0 / NULLIF(input_tokens, 0)), 4) AS output_ratio,
+    ROUND(
+        (AVG(output_tokens * 1.0 / NULLIF(input_tokens, 0)) * 10)
+        / NULLIF(SUM(cost_usd), 0) * 100, 2
+    )                               AS roi_score
+FROM base
+GROUP BY 1, 2
+ORDER BY 1, 2
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "node_id": "model.tokenwatch.mart_team_roi"} */;
+[0m15:40:07.742535 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.316 seconds
+[0m15:40:07.745606 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '814c0f21-61d0-4338-8a5d-b2a08da3a917', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CD4342540>]}
+[0m15:40:07.745606 [info ] [Thread-2 (]: 6 of 6 OK created sql view model RAW.mart_team_roi ............................. [[32mSUCCESS 1[0m in 0.33s]
+[0m15:40:07.746635 [debug] [Thread-2 (]: Finished running node model.tokenwatch.mart_team_roi
+[0m15:40:07.747519 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:40:07.747519 [debug] [MainThread]: Connection 'list_TOKENWATCH' was left open.
+[0m15:40:07.747519 [debug] [MainThread]: On list_TOKENWATCH: Close
+[0m15:40:07.860885 [debug] [MainThread]: Connection 'list_TOKENWATCH_RAW' was left open.
+[0m15:40:07.861889 [debug] [MainThread]: On list_TOKENWATCH_RAW: Close
+[0m15:40:08.003237 [debug] [MainThread]: Connection 'model.tokenwatch.mart_team_roi' was left open.
+[0m15:40:08.004250 [debug] [MainThread]: On model.tokenwatch.mart_team_roi: Close
+[0m15:40:08.118225 [info ] [MainThread]: 
+[0m15:40:08.119148 [info ] [MainThread]: Finished running 1 table model, 5 view models in 0 hours 0 minutes and 7.14 seconds (7.14s).
+[0m15:40:08.121224 [debug] [MainThread]: Command end result
+[0m15:40:08.147143 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\RIYA\Documents\tokenwatch\target\manifest.json
+[0m15:40:08.149792 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\RIYA\Documents\tokenwatch\target\semantic_manifest.json
+[0m15:40:08.155720 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\RIYA\Documents\tokenwatch\target\run_results.json
+[0m15:40:08.156718 [info ] [MainThread]: 
+[0m15:40:08.156718 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:40:08.157719 [info ] [MainThread]: 
+[0m15:40:08.157719 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[0m15:40:08.158715 [debug] [MainThread]: Command `dbt run` succeeded at 15:40:08.158715 after 8.77 seconds
+[0m15:40:08.158715 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CBFC0ACC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CBBF74680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014CC0EC3B90>]}
+[0m15:40:08.158715 [debug] [MainThread]: Flushing usage events
+[0m15:40:08.506629 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:47:32.282079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B40B31BFE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4080A9550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4081F4980>]}
+
+
+============================== 15:47:32.286036 | 05b41e28-29ed-4c11-a518-e2409361c7d9 ==============================
+[0m15:47:32.286036 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:47:32.286869 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\RIYA\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\RIYA\\Documents\\tokenwatch\\logs'}
+[0m15:47:33.036964 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m15:47:33.037963 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m15:47:33.037963 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m15:47:33.209014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '05b41e28-29ed-4c11-a518-e2409361c7d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B40B97D7F0>]}
+[0m15:47:33.260882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '05b41e28-29ed-4c11-a518-e2409361c7d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B41DAAD4C0>]}
+[0m15:47:33.261893 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m15:47:33.607313 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m15:47:33.792251 [debug] [MainThread]: Partial parsing enabled: 3 files deleted, 0 files added, 0 files changed.
+[0m15:47:33.793251 [debug] [MainThread]: Partial parsing: deleted file: tokenwatch://models\example\my_first_dbt_model.sql
+[0m15:47:33.793251 [debug] [MainThread]: Partial parsing: deleted file: tokenwatch://models\example\my_second_dbt_model.sql
+[0m15:47:33.836332 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.tokenwatch.example
+[0m15:47:33.858781 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '05b41e28-29ed-4c11-a518-e2409361c7d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B41EB4AE70>]}
+[0m15:47:33.921717 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\RIYA\Documents\tokenwatch\target\manifest.json
+[0m15:47:33.923225 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\RIYA\Documents\tokenwatch\target\semantic_manifest.json
+[0m15:47:33.937701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '05b41e28-29ed-4c11-a518-e2409361c7d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B41E7CF8C0>]}
+[0m15:47:33.937701 [info ] [MainThread]: Found 4 models, 1 source, 536 macros
+[0m15:47:33.938700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '05b41e28-29ed-4c11-a518-e2409361c7d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B40D1DCEC0>]}
+[0m15:47:33.939699 [info ] [MainThread]: 
+[0m15:47:33.939699 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:47:33.940699 [info ] [MainThread]: 
+[0m15:47:33.940699 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m15:47:33.943699 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TOKENWATCH'
+[0m15:47:33.997058 [debug] [ThreadPool]: Using snowflake connection "list_TOKENWATCH"
+[0m15:47:33.998055 [debug] [ThreadPool]: On list_TOKENWATCH: show terse schemas in database TOKENWATCH
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "connection_name": "list_TOKENWATCH"} */
+[0m15:47:33.998055 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:47:35.103015 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.119 seconds
+[0m15:47:35.120866 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TOKENWATCH_RAW'
+[0m15:47:35.132434 [debug] [ThreadPool]: Using snowflake connection "list_TOKENWATCH_RAW"
+[0m15:47:35.132434 [debug] [ThreadPool]: On list_TOKENWATCH_RAW: show objects in TOKENWATCH.RAW
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "connection_name": "list_TOKENWATCH_RAW"} */;
+[0m15:47:35.133468 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:47:36.237538 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 1.105 seconds
+[0m15:47:36.240537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '05b41e28-29ed-4c11-a518-e2409361c7d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B41E8DC680>]}
+[0m15:47:36.243538 [debug] [Thread-2 (]: Began running node model.tokenwatch.stg_token_usage
+[0m15:47:36.244638 [info ] [Thread-2 (]: 1 of 4 START sql view model RAW.stg_token_usage ................................ [RUN]
+[0m15:47:36.244638 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.tokenwatch.stg_token_usage'
+[0m15:47:36.244638 [debug] [Thread-2 (]: Began compiling node model.tokenwatch.stg_token_usage
+[0m15:47:36.252540 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokenwatch.stg_token_usage"
+[0m15:47:36.253536 [debug] [Thread-2 (]: Began executing node model.tokenwatch.stg_token_usage
+[0m15:47:36.280623 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokenwatch.stg_token_usage"
+[0m15:47:36.281536 [debug] [Thread-2 (]: Using snowflake connection "model.tokenwatch.stg_token_usage"
+[0m15:47:36.281536 [debug] [Thread-2 (]: On model.tokenwatch.stg_token_usage: create or replace   view TOKENWATCH.RAW.stg_token_usage
+  
+  
+  
+  
+  as (
+    WITH source AS (
+    SELECT * FROM TOKENWATCH.RAW.token_usage_raw
+)
+
+SELECT
+    event_id,
+    event_timestamp,
+    project,
+    team,
+    engineer,
+    model,
+    provider,
+    task_type,
+    input_tokens,
+    output_tokens,
+    total_tokens,
+    cost_usd,
+    duration_ms,
+    was_successful,
+    DATE_TRUNC('day', event_timestamp)  AS event_date,
+    DATE_TRUNC('week', event_timestamp) AS event_week
+FROM source
+WHERE was_successful = TRUE
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "node_id": "model.tokenwatch.stg_token_usage"} */;
+[0m15:47:36.282625 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:47:36.752672 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.470 seconds
+[0m15:47:36.773173 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '05b41e28-29ed-4c11-a518-e2409361c7d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B40B28CCB0>]}
+[0m15:47:36.774171 [info ] [Thread-2 (]: 1 of 4 OK created sql view model RAW.stg_token_usage ........................... [[32mSUCCESS 1[0m in 0.53s]
+[0m15:47:36.774171 [debug] [Thread-2 (]: Finished running node model.tokenwatch.stg_token_usage
+[0m15:47:36.775262 [debug] [Thread-2 (]: Began running node model.tokenwatch.mart_daily_cost
+[0m15:47:36.776168 [info ] [Thread-2 (]: 2 of 4 START sql view model RAW.mart_daily_cost ................................ [RUN]
+[0m15:47:36.776168 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tokenwatch.stg_token_usage, now model.tokenwatch.mart_daily_cost)
+[0m15:47:36.777258 [debug] [Thread-2 (]: Began compiling node model.tokenwatch.mart_daily_cost
+[0m15:47:36.780255 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokenwatch.mart_daily_cost"
+[0m15:47:36.781277 [debug] [Thread-2 (]: Began executing node model.tokenwatch.mart_daily_cost
+[0m15:47:36.784267 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokenwatch.mart_daily_cost"
+[0m15:47:36.785170 [debug] [Thread-2 (]: Using snowflake connection "model.tokenwatch.mart_daily_cost"
+[0m15:47:36.786170 [debug] [Thread-2 (]: On model.tokenwatch.mart_daily_cost: create or replace   view TOKENWATCH.RAW.mart_daily_cost
+  
+  
+  
+  
+  as (
+    WITH base AS (
+    SELECT * FROM TOKENWATCH.RAW.stg_token_usage
+)
+
+SELECT
+    event_date,
+    provider,
+    model,
+    COUNT(*)            AS total_calls,
+    SUM(total_tokens)   AS total_tokens,
+    ROUND(SUM(cost_usd), 4) AS total_cost_usd
+FROM base
+GROUP BY 1, 2, 3
+ORDER BY 1
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "node_id": "model.tokenwatch.mart_daily_cost"} */;
+[0m15:47:37.070037 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.283 seconds
+[0m15:47:37.072036 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '05b41e28-29ed-4c11-a518-e2409361c7d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B41F1B0470>]}
+[0m15:47:37.072036 [info ] [Thread-2 (]: 2 of 4 OK created sql view model RAW.mart_daily_cost ........................... [[32mSUCCESS 1[0m in 0.29s]
+[0m15:47:37.073036 [debug] [Thread-2 (]: Finished running node model.tokenwatch.mart_daily_cost
+[0m15:47:37.073036 [debug] [Thread-2 (]: Began running node model.tokenwatch.mart_provider_breakdown
+[0m15:47:37.073036 [info ] [Thread-2 (]: 3 of 4 START sql view model RAW.mart_provider_breakdown ........................ [RUN]
+[0m15:47:37.074041 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tokenwatch.mart_daily_cost, now model.tokenwatch.mart_provider_breakdown)
+[0m15:47:37.074041 [debug] [Thread-2 (]: Began compiling node model.tokenwatch.mart_provider_breakdown
+[0m15:47:37.077041 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokenwatch.mart_provider_breakdown"
+[0m15:47:37.077041 [debug] [Thread-2 (]: Began executing node model.tokenwatch.mart_provider_breakdown
+[0m15:47:37.080039 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokenwatch.mart_provider_breakdown"
+[0m15:47:37.081038 [debug] [Thread-2 (]: Using snowflake connection "model.tokenwatch.mart_provider_breakdown"
+[0m15:47:37.081038 [debug] [Thread-2 (]: On model.tokenwatch.mart_provider_breakdown: create or replace   view TOKENWATCH.RAW.mart_provider_breakdown
+  
+  
+  
+  
+  as (
+    WITH base AS (
+    SELECT * FROM TOKENWATCH.RAW.stg_token_usage
+)
+
+SELECT
+    event_week,
+    provider,
+    model,
+    COUNT(*)                    AS total_calls,
+    SUM(total_tokens)           AS total_tokens,
+    ROUND(SUM(cost_usd), 4)     AS total_cost_usd,
+    ROUND(AVG(cost_usd), 6)     AS avg_cost_per_call
+FROM base
+GROUP BY 1, 2, 3
+ORDER BY 1, 3
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "node_id": "model.tokenwatch.mart_provider_breakdown"} */;
+[0m15:47:37.321674 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.240 seconds
+[0m15:47:37.322672 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '05b41e28-29ed-4c11-a518-e2409361c7d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B41F1CC6B0>]}
+[0m15:47:37.323670 [info ] [Thread-2 (]: 3 of 4 OK created sql view model RAW.mart_provider_breakdown ................... [[32mSUCCESS 1[0m in 0.25s]
+[0m15:47:37.324671 [debug] [Thread-2 (]: Finished running node model.tokenwatch.mart_provider_breakdown
+[0m15:47:37.324671 [debug] [Thread-2 (]: Began running node model.tokenwatch.mart_team_roi
+[0m15:47:37.324671 [info ] [Thread-2 (]: 4 of 4 START sql view model RAW.mart_team_roi .................................. [RUN]
+[0m15:47:37.325671 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tokenwatch.mart_provider_breakdown, now model.tokenwatch.mart_team_roi)
+[0m15:47:37.325671 [debug] [Thread-2 (]: Began compiling node model.tokenwatch.mart_team_roi
+[0m15:47:37.327671 [debug] [Thread-2 (]: Writing injected SQL for node "model.tokenwatch.mart_team_roi"
+[0m15:47:37.328674 [debug] [Thread-2 (]: Began executing node model.tokenwatch.mart_team_roi
+[0m15:47:37.329771 [debug] [Thread-2 (]: Writing runtime sql for node "model.tokenwatch.mart_team_roi"
+[0m15:47:37.330766 [debug] [Thread-2 (]: Using snowflake connection "model.tokenwatch.mart_team_roi"
+[0m15:47:37.331757 [debug] [Thread-2 (]: On model.tokenwatch.mart_team_roi: create or replace   view TOKENWATCH.RAW.mart_team_roi
+  
+  
+  
+  
+  as (
+    WITH base AS (
+    SELECT * FROM TOKENWATCH.RAW.stg_token_usage
+)
+
+SELECT
+    event_week,
+    team,
+    COUNT(*)                        AS total_calls,
+    SUM(total_tokens)               AS total_tokens,
+    ROUND(SUM(cost_usd), 4)         AS total_cost_usd,
+    ROUND(AVG(output_tokens * 1.0 / NULLIF(input_tokens, 0)), 4) AS output_ratio,
+    ROUND(
+        (AVG(output_tokens * 1.0 / NULLIF(input_tokens, 0)) * 10)
+        / NULLIF(SUM(cost_usd), 0) * 100, 2
+    )                               AS roi_score
+FROM base
+GROUP BY 1, 2
+ORDER BY 1, 2
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "tokenwatch", "target_name": "dev", "node_id": "model.tokenwatch.mart_team_roi"} */;
+[0m15:47:37.614541 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.283 seconds
+[0m15:47:37.616401 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '05b41e28-29ed-4c11-a518-e2409361c7d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4203AA630>]}
+[0m15:47:37.617499 [info ] [Thread-2 (]: 4 of 4 OK created sql view model RAW.mart_team_roi ............................. [[32mSUCCESS 1[0m in 0.29s]
+[0m15:47:37.618404 [debug] [Thread-2 (]: Finished running node model.tokenwatch.mart_team_roi
+[0m15:47:37.619047 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:47:37.619047 [debug] [MainThread]: Connection 'list_TOKENWATCH' was left open.
+[0m15:47:37.619047 [debug] [MainThread]: On list_TOKENWATCH: Close
+[0m15:47:37.722204 [debug] [MainThread]: Connection 'list_TOKENWATCH_RAW' was left open.
+[0m15:47:37.723201 [debug] [MainThread]: On list_TOKENWATCH_RAW: Close
+[0m15:47:37.833899 [debug] [MainThread]: Connection 'model.tokenwatch.mart_team_roi' was left open.
+[0m15:47:37.833899 [debug] [MainThread]: On model.tokenwatch.mart_team_roi: Close
+[0m15:47:37.930016 [info ] [MainThread]: 
+[0m15:47:37.930016 [info ] [MainThread]: Finished running 4 view models in 0 hours 0 minutes and 3.99 seconds (3.99s).
+[0m15:47:37.930915 [debug] [MainThread]: Command end result
+[0m15:47:37.953313 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\RIYA\Documents\tokenwatch\target\manifest.json
+[0m15:47:37.956312 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\RIYA\Documents\tokenwatch\target\semantic_manifest.json
+[0m15:47:37.960719 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\RIYA\Documents\tokenwatch\target\run_results.json
+[0m15:47:37.960719 [info ] [MainThread]: 
+[0m15:47:37.961621 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:47:37.961621 [info ] [MainThread]: 
+[0m15:47:37.961621 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m15:47:37.962621 [debug] [MainThread]: Command `dbt run` succeeded at 15:47:37.962621 after 5.80 seconds
+[0m15:47:37.962621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B40B8CFC20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B40B339460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B41E96A900>]}
+[0m15:47:37.963622 [debug] [MainThread]: Flushing usage events
+[0m15:47:38.389760 [debug] [MainThread]: An error was encountered while trying to flush usage events
