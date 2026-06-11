@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    database: TOKENWATCH
+    schema: RAW
+    tables:
+      - name: token_usage_raw
+      
