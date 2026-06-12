@@ -28,5 +28,6 @@ SELECT
     DATE_TRUNC('week', event_timestamp) AS event_week
 FROM source
 WHERE was_successful = TRUE
+AND event_timestamp >= DATEADD(day, -90, CURRENT_DATE)
   );
 

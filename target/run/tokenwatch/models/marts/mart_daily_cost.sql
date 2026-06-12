@@ -1,11 +1,12 @@
 
-  create or replace   view TOKENWATCH.RAW.mart_daily_cost
   
-  
-  
-  
-  as (
-    WITH base AS (
+    
+
+create or replace transient table TOKENWATCH.RAW.mart_daily_cost
+    
+    
+    
+    as (WITH base AS (
     SELECT * FROM TOKENWATCH.RAW.stg_token_usage
 )
 
@@ -19,5 +20,8 @@ SELECT
 FROM base
 GROUP BY 1, 2, 3
 ORDER BY 1
-  );
+    )
+;
 
+
+  

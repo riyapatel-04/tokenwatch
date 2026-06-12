@@ -44,8 +44,6 @@ def load_team_model():
     return pd.read_sql("SELECT * FROM TOKENWATCH.RAW.MART_TEAM_MODEL_USAGE", conn)
 
 team_model_df = load_team_model()
-
-
 daily_df = load_daily_cost()
 team_df = load_team_roi()
 provider_df = load_provider()

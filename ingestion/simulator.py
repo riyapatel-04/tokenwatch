@@ -22,14 +22,23 @@ COST_PER_1K = {
     "gemini-pro": 0.00035
 }
 
+TEAM_PROFILES = {
+    "Data Engineering": {"models": ["claude-haiku", "gpt-3.5-turbo"], "input_range": (300, 800), "output_range": (400, 1200)},
+    "Support":          {"models": ["claude-haiku", "gemini-pro"],    "input_range": (200, 500), "output_range": (300, 900)},
+    "Product":          {"models": ["claude-sonnet", "gpt-4o"],       "input_range": (400, 1000), "output_range": (300, 700)},
+    "Sales":            {"models": ["gpt-4o", "gpt-4o"],              "input_range": (500, 1500), "output_range": (200, 500)},
+    "Marketing":        {"models": ["gpt-4o", "claude-sonnet"],       "input_range": (600, 2000), "output_range": (200, 400)},
+}
+
 def generate_record(date, week_number):
     team = random.choice(TEAMS)
-    model = random.choice(MODELS)
+    profile = TEAM_PROFILES[team]
+    model = random.choice(profile["models"])
     task = random.choice(TASK_TYPES)
 
     spike_multiplier = 1 + (week_number * 0.4)
-    input_tokens = int(random.randint(200, 1500) * spike_multiplier)
-    output_tokens = int(random.randint(100, 800) * spike_multiplier)
+    input_tokens = int(random.randint(*profile["input_range"]) * spike_multiplier)
+    output_tokens = int(random.randint(*profile["output_range"]) * spike_multiplier)
     total_tokens = input_tokens + output_tokens
     cost = round((total_tokens / 1000) * COST_PER_1K[model], 6)
 
