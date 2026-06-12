@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 .venv/
+target/
+logs/
+dbt_packages/
