@@ -17,6 +17,13 @@ st.markdown("""
 [data-testid="stHeader"] {
     background-color: #EEEAFF;
 }
+[data-testid="stMetricLabel"] {
+    font-size: 100px !important;
+    font-weight: 700 !important;
+}
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
 
