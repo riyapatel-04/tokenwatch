@@ -252,3 +252,23 @@ for i, row in scorecard_df.iterrows():
     </div>
 </div>
 """, unsafe_allow_html=True)    
+        
+st.divider()
+col1, col2 = st.columns(2)
+
+with col1:
+    st.subheader("🔥 Top spenders")
+    st.caption("Engineers with highest AI spend this period")
+    top_spenders = engineer_df.head(5)[["ENGINEER", "TEAM", "TOTAL_COST_USD", "TOP_MODEL"]].copy()
+    top_spenders["TOTAL_COST_USD"] = top_spenders["TOTAL_COST_USD"].round(2)
+    top_spenders.columns = ["Engineer", "Team", "Spend ($)", "Primary Model"]
+    st.dataframe(top_spenders, hide_index=True, use_container_width=True)
+
+with col2:
+    st.subheader("🌟 Most efficient engineers")
+    st.caption("Engineers with highest output per dollar")
+    top_efficient = engineer_df.nlargest(5, "OUTPUT_RATIO")[["ENGINEER", "TEAM", "TOTAL_COST_USD", "OUTPUT_RATIO"]].copy()
+    top_efficient["TOTAL_COST_USD"] = top_efficient["TOTAL_COST_USD"].round(2)
+    top_efficient["OUTPUT_RATIO"] = top_efficient["OUTPUT_RATIO"].round(2)
+    top_efficient.columns = ["Engineer", "Team", "Spend ($)", "Output Ratio"]
+    st.dataframe(top_efficient, hide_index=True, use_container_width=True)
