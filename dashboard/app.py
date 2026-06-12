@@ -9,6 +9,17 @@ load_dotenv()
 
 st.set_page_config(page_title="TokenWatch", page_icon="💰", layout="wide")
 
+st.markdown("""
+<style>
+[data-testid="stAppViewContainer"] {
+    background-color: #EEEAFF;
+}
+[data-testid="stHeader"] {
+    background-color: #EEEAFF;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 def get_connection():
     return snowflake.connector.connect(
@@ -68,11 +79,11 @@ team_df = load_team_roi()
 provider_df = load_provider()
 
 st.title("💰 TokenWatch - AI Cost & ROI Intelligence")
-st.caption("Inspired by the Microsoft & Uber token cost explosion of 2026")
+st.markdown("<p style='font-size:16px;color:gray;'>Inspired by the Microsoft & Uber token cost explosion of 2026</p>", unsafe_allow_html=True)
 
 min_date = pd.to_datetime(daily_df["EVENT_DATE"].min()).strftime("%b %d, %Y")
 max_date = pd.to_datetime(daily_df["EVENT_DATE"].max()).strftime("%b %d, %Y")
-st.caption(f"📅 Data range: {min_date} - {max_date}")
+st.markdown(f"<p style='font-size:16px;color:gray;'>📅 Data range: {min_date} - {max_date}</p>", unsafe_allow_html=True)
 
 st.divider()
 
@@ -82,22 +93,6 @@ avg_roi = team_df["ROI_SCORE"].mean()
 budget = 500
 daily_burn = total_spend / 90
 runway_days = int((budget - total_spend) / daily_burn)
-
-col1, col2, col3, col4 = st.columns(4)
-st.markdown("""
-<style>
-.metric-card {
-    background: var(--background-color);
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-}
-.metric-label { font-size: 13px; color: gray; margin-bottom: 6px; }
-.metric-value { font-size: 28px; font-weight: 700; color: #1a1a1a; }
-.metric-sub { font-size: 12px; margin-top: 6px; }
-</style>
-""", unsafe_allow_html=True)
 
 
 col1, col2, col3, col4 = st.columns(4)
