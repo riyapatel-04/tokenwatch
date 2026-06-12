@@ -43,6 +43,25 @@ def load_team_model():
     conn = get_connection()
     return pd.read_sql("SELECT * FROM TOKENWATCH.RAW.MART_TEAM_MODEL_USAGE", conn)
 
+@st.cache_data(ttl=600)
+def load_engineer_usage():
+    conn = get_connection()
+    return pd.read_sql("""
+        SELECT 
+            ENGINEER,
+            TEAM,
+            COUNT(*) AS TOTAL_CALLS,
+            ROUND(SUM(TOTAL_TOKENS), 0) AS TOTAL_TOKENS,
+            ROUND(SUM(COST_USD), 2) AS TOTAL_COST_USD,
+            ROUND(AVG(OUTPUT_TOKENS * 1.0 / NULLIF(INPUT_TOKENS, 0)), 2) AS OUTPUT_RATIO,
+            MAX(MODEL) AS TOP_MODEL
+        FROM TOKENWATCH.RAW.TOKEN_USAGE_RAW
+        GROUP BY 1, 2
+        ORDER BY TOTAL_COST_USD DESC
+    """, conn)
+
+engineer_df = load_engineer_usage()
+
 team_model_df = load_team_model()
 daily_df = load_daily_cost()
 team_df = load_team_roi()
@@ -60,7 +79,7 @@ st.divider()
 total_spend = daily_df["TOTAL_COST_USD"].sum()
 total_tokens = daily_df["TOTAL_TOKENS"].sum()
 avg_roi = team_df["ROI_SCORE"].mean()
-budget = 250
+budget = 500
 daily_burn = total_spend / 90
 runway_days = int((budget - total_spend) / daily_burn)
 
@@ -267,6 +286,7 @@ with col1:
 with col2:
     st.subheader("🌟 Most efficient engineers")
     st.caption("Engineers with highest output per dollar")
+    engineer_df["OUTPUT_RATIO"] = pd.to_numeric(engineer_df["OUTPUT_RATIO"], errors='coerce')
     top_efficient = engineer_df.nlargest(5, "OUTPUT_RATIO")[["ENGINEER", "TEAM", "TOTAL_COST_USD", "OUTPUT_RATIO"]].copy()
     top_efficient["TOTAL_COST_USD"] = top_efficient["TOTAL_COST_USD"].round(2)
     top_efficient["OUTPUT_RATIO"] = top_efficient["OUTPUT_RATIO"].round(2)

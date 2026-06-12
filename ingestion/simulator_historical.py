@@ -10,7 +10,6 @@ load_dotenv()
 fake = Faker()
 
 TEAMS = ["Data Engineering", "Product", "Marketing", "Support", "Sales"]
-MODELS = ["claude-sonnet", "claude-haiku", "gpt-4o", "gpt-3.5-turbo", "gemini-pro"]
 PROVIDERS = {"claude-sonnet": "Anthropic", "claude-haiku": "Anthropic", "gpt-4o": "OpenAI", "gpt-3.5-turbo": "OpenAI", "gemini-pro": "Google"}
 TASK_TYPES = ["code_generation", "data_analysis", "email_drafting", "ticket_triage", "report_summary", "sql_generation"]
 
@@ -67,7 +66,7 @@ def generate_record(date, week_number):
         random.random() > 0.05
     )
 
-def run_simulator():
+def run_historical_simulator():
     conn = snowflake.connector.connect(
         account=os.getenv("SNOWFLAKE_ACCOUNT"),
         user=os.getenv("SNOWFLAKE_USER"),
@@ -79,11 +78,13 @@ def run_simulator():
 
     cursor = conn.cursor()
     records = []
-    current_date = datetime.now()
-    week_number = 12
+    start_date = datetime.now() - timedelta(days=90)
 
-    for day in range(1):
+    for day in range(90):
+        current_date = start_date + timedelta(days=day)
+        week_number = day // 7
         daily_calls = int(random.randint(40, 80) * (1 + week_number * 0.3))
+
         for _ in range(daily_calls):
             records.append(generate_record(current_date, week_number))
 
@@ -93,9 +94,9 @@ def run_simulator():
     """, records)
 
     conn.commit()
-    print(f"Inserted {len(records)} records successfully!")
+    print(f"Inserted {len(records)} historical records successfully!")
     cursor.close()
     conn.close()
 
 if __name__ == "__main__":
-    run_simulator()
+    run_historical_simulator()

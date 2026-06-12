@@ -45,7 +45,6 @@ def get_top_spender():
     cursor.execute("""
         SELECT ENGINEER, TEAM, ROUND(SUM(COST_USD), 2) AS TOTAL_SPEND, MAX(MODEL) AS TOP_MODEL
         FROM TOKENWATCH.RAW.TOKEN_USAGE_RAW
-        WHERE EVENT_TIMESTAMP >= DATEADD(day, -30, CURRENT_DATE)
         GROUP BY 1, 2
         ORDER BY TOTAL_SPEND DESC
         LIMIT 1
@@ -58,7 +57,7 @@ def run_alerts():
     total_spend, worst_team, worst_roi = get_snowflake_data()
     top_engineer, eng_team, eng_spend, eng_model = get_top_spender()
 
-    budget = 250
+    budget = 500
     remaining = budget - total_spend
     daily_burn = total_spend / 90
     runway_days = int(remaining / daily_burn)
